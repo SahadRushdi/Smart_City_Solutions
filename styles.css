@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=New+Amsterdam&display=swap');
+
+.my-custom-paragraph {
+    font-family: "Merriweather", serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Choose a weight */
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+}
