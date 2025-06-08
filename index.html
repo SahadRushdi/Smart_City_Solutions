@@ -19,10 +19,10 @@
         <header class="d-flex justify-content-center py-3">
             <ul class="nav nav-pills">
                 <li class="nav-item"><a href="#home" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="#images" class="nav-link">Images</a></li>
                 <li class="nav-item"><a href="#local-issues" class="nav-link">Local Issues</a></li>
                 <li class="nav-item"><a href="#solutions" class="nav-link">Proposed Solutions</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#feedback" class="nav-link">Feedback Forum</a></li>
             </ul>
         </header>
     </div>
@@ -57,37 +57,39 @@
     </section>
 
     <!-- Carousel For Image Slideshow -->
-    <div id="carouselExampleIndicators" class="carousel slide">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+     <section id="images">
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/city_landscape1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/city_landscape3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/city_landscape2.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/city_landscape1.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/city_landscape3.jpg" class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="images/city_landscape2.jpg" class="d-block w-100" alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+     </section>
 
     <!-- Local Issues Jumbotron -->
     <section id="local-issues">
@@ -207,6 +209,112 @@
             </div>
         </div>
     </section>
+
+    <!-- Community Events Jumbotron -->
+    <section id="local-issues">
+        <div class="my-5">
+            <div class="p-5 text-center bg-body-tertiary">
+                <div class="container py-5">
+                    <h1 class="text-body-emphasis">Community Events</h1>
+
+                    <p class="col-lg-8 mx-auto lead">Building a smart, sustainable, and connected community isn't just
+                        about technology—it's about people coming together to collaborate, innovate, and take action.
+                        Community events provide an exciting opportunity for residents to engage in local projects,
+                        learn about smart city initiatives, and contribute their own ideas for improving urban living.
+                    </p>
+
+                    <p class="col-lg-8 mx-auto lead">
+                        Whether it's an eco-friendly clean-up drive, a tech innovation showcase, or a public discussion
+                        on city planning, these events foster active participation and encourage residents to play a
+                        role in shaping their urban environment. By bringing together government officials, tech
+                        experts, environmental advocates, and local residents, these events can create lasting change
+                        while strengthening the sense of community. Get ready to connect, learn, and inspire—because a smarter city starts with an engaged and proactive community!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Forum VUE-JS -->
+     <section id="feedback">
+        <div id="app" class="container my-5">
+            <h2 class="text-center mb-4">Vue Forum</h2>
+        
+            <!-- Comment Form -->
+            <div class="card mb-4">
+              <div class="card-body">
+                <form @submit.prevent="addComment">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input 
+                      v-model="newComment.name" 
+                      type="text" 
+                      class="form-control" 
+                      id="name" 
+                      required
+                    >
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Comment</label>
+                    <textarea 
+                      v-model="newComment.message" 
+                      class="form-control" 
+                      id="message" 
+                      rows="3" 
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Post Comment</button>
+                </form>
+              </div>
+            </div>
+        
+            <!-- Comments List -->
+            <div v-if="comments.length">
+              <h4>All Comments</h4>
+              <div class="list-group">
+                <div 
+                  v-for="(comment, index) in comments" 
+                  :key="index" 
+                  class="list-group-item"
+                >
+                  <h5 class="mb-1">{{ comment.name }}</h5>
+                  <p class="mb-1">{{ comment.message }}</p>
+                </div>
+              </div>
+            </div>
+            <div v-else class="text-muted">No comments yet. Be the first to post!</div>
+          </div>
+        
+          <!-- Vue CDN -->
+          <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        
+          <script>
+            new Vue({
+              el: '#app',
+              data: {
+                newComment: {
+                  name: '',
+                  message: ''
+                },
+                comments: []
+              },
+              methods: {
+                addComment() {
+                  if (this.newComment.name && this.newComment.message) {
+                    this.comments.push({
+                      name: this.newComment.name,
+                      message: this.newComment.message
+                    });
+                    // Reset form
+                    this.newComment.name = '';
+                    this.newComment.message = '';
+                  }
+                }
+              }
+            });
+          </script>
+     </section>
 
     <!-- Footer -->
     <div class="container">
